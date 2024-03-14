@@ -1,0 +1,1 @@
+<link rel="stylesheet" type="text/css" href="{{url('font_awesome/css/all.min.css')}}">

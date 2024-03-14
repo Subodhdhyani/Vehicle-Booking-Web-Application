@@ -1,0 +1,28 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+ 
+}
+
+.car {
+  position: absolute;
+  top: 50%;
+  left: 0; 
+  animation: moveCar 10s linear infinite;
+  width: 200px; 
+  height: 150px; 
+  z-index: 1000;
+}
+
+@keyframes moveCar {
+  0% {
+    left: 0; 
+  }
+  50% {
+    left: calc(100% - 15%); 
+  }
+  100% {
+    left: 0; 
+  }
+}
