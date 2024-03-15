@@ -1,66 +1,114 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Vehicle Booking Web Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Tags
 
-## About Laravel
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/subodhdhyani/Vehicle-Booking-Web-Application/blob/master/LICENSE)
+[![Laravel](https://img.shields.io/badge/Laravel-v10.0.0-red.svg)](https://laravel.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-v8.0-blue.svg)](https://www.mysql.com/)
+[![Stripe](https://img.shields.io/badge/Stripe-v13.13.0-blue.svg)](https://stripe.com/)
+[![HTML](https://img.shields.io/badge/HTML-5-orange.svg)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Application Name : Corbett Car Booking
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Introduction
+This repository contains the source code for a web application built with Laravel in the backend, MySQL database, jQuery, Bootstrap, and Laravel Blade templates in the frontend. The application allows users to book vehicles online and includes admin functionalities such as adding vehicles and managing bookings etc.
 
-## Learning Laravel
+## Requirements
+- PHP v>=8.0(wamp or xampp)
+- Laravel v10
+- Composer
+- MySQL v>=8.0
+- Stripe account (for payment gateway integration)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Usage
+### User
+- Users can visit the web application and browse available vehicles.
+- Users can book a vehicle online by providing necessary details and make a Payment.
+- User can download the booking Receipt.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Admin
+- Admin can log in to the admin panel using credentials.
+- Once logged in, admin can manage vehicles (add, edit, delete).
+- Admin can view and manage bookings made by users.
+- Admin can accept and reject the booking.
+- Admin can refund the payment to the user if booking is canceled.
+- Admin can configure settings such as payment gateway, send newsletters, etc.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Technologies Used
+- Laravel: Backend framework for PHP.
+- MySQL: Relational database management system.
+- jQuery: JavaScript library for DOM manipulation.
+- Bootstrap: Frontend framework for responsive design.
+- Laravel Blade Template: Templating engine for Laravel.
+- Stripe: Payment gateway for processing payments securely.
 
-## Laravel Sponsors
+## Authentication
+- Admin authentication is handled using Laravel's built-in authentication system (created Custom Guard).
+- Only authenticated admin users can access the admin panel.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Payment Gateway Integration (Stripe)
+- Payment gateway integration is done using the Stripe PHP library.
+- Users can make payments securely using Stripe's checkout.
 
-### Premium Partners
+## Changes in Project:
+- Set the Stripe key inside `.env`.
+- Create Database named `Corbett_Car_Booking`.
+- Set/Change the WhatsApp, email, and contact details in UI.
+- For the admin credentials setup, it has a signup route and form. After setting the admin cred, remove/hide this from the application.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Installation
 
-## Contributing
+1. **Clone the repository:**
+    ```sh
+    https://github.com/Subodhdhyani/Vehicle-Booking-Web-Application.git
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. **Install Composer dependencies:**
+    ```sh
+    composer install
+    ```
 
-## Code of Conduct
+3. **Copy `.env.example` to `.env` and update the environment variables:**
+    ```sh
+    cp .env.example .env
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. **link storage directory to the public director:**
+    ```sh
+   php artisan storage:link
+    ```
+5. **Generate application key:**
+    ```sh
+    php artisan key:generate
+    ```
 
-## Security Vulnerabilities
+6. **Update `.env` with your database and Stripe API keys.**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7. **Run database migrations:**
+    ```sh
+    php artisan migrate
+    ```
+
+8. **Serve the application:**
+    ```sh
+    php artisan serve
+    ```
+
+9. **Access the application in your browser at [http://localhost:8000](http://localhost:8000).**
+
+
 
 ## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Contributors
+- [Subodh Dhyani](https://github.com/subodhdhyani)
+
+## Snapshot
+- [Home Page Small Screen](https://github.com/Subodhdhyani/Vehicle-Booking-Web-Application/assets/84286795/2f83ef6c-5933-4a1f-ae73-901788aa9f4b)
+- [Home Page Large Screen](https://github.com/Subodhdhyani/Vehicle-Booking-Web-Application/assets/84286795/268ccf17-4702-4092-b7e4-872f52ff6329)
+- [Booking Page Small Screen](https://github.com/Subodhdhyani/Vehicle-Booking-Web-Application/assets/84286795/2a46b254-9a72-4fde-92e1-e84e95ed8432)
+- [Booking Page Large Screen](https://github.com/Subodhdhyani/Vehicle-Booking-Web-Application/assets/84286795/df4ac135-c02a-4e58-a6e7-df577569d482)
+- [Admin Dashboard Small Screen](https://github.com/Subodhdhyani/Vehicle-Booking-Web-Application/assets/84286795/7e7024d1-02fa-4101-9b73-0cd5879fe007)
+- [Admin Dashboard Large Screen](https://github.com/Subodhdhyani/Vehicle-Booking-Web-Application/assets/84286795/cb2d9a86-bced-4186-9e80-75ed99774abd)
